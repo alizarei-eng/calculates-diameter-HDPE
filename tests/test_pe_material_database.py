@@ -43,7 +43,10 @@ class TestPEMaterialDatabase(unittest.TestCase):
             calculate_design_stress("PE100", design_coefficient=1.0)
 
     def test_loaded_database_has_scope_warning(self):
-        self.assertIn("not a manufacturer approval list", load_pe_material_database()["scope"])
+        self.assertIn(
+            "not a manufacturer approval list",
+            load_pe_material_database()["scope"].lower(),
+        )
 
 
 if __name__ == "__main__":
