@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "id": "IAPWS_IF97",
+      "title": "Revised Release on the IAPWS Industrial Formulation 1997 for the Thermodynamic Properties of Water and Steam",
+      "publisher": "International Association for the Properties of Water and Steam",
+      "url": "https://iapws.org/relguide/IF97-Rev.html",
+      "used_for": ["freshwater density", "freshwater viscosity", "saturation pressure"]
+    },
+    {
+      "id": "IAPWS_VISC",
+      "title": "Release on the IAPWS Formulation 2008 for the Viscosity of Ordinary Water Substance",
+      "publisher": "International Association for the Properties of Water and Steam",
+      "url": "https://iapws.org/relguide/visc.pdf",
+      "used_for": ["freshwater viscosity reference"]
+    },
+    {
+      "id": "GSW_PYTHON",
+      "title": "GSW-Python documentation",
+      "publisher": "TEOS-10",
+      "url": "https://teos-10.github.io/GSW-Python/",
+      "used_for": ["PSS-78 practical salinity", "TEOS-10 Absolute Salinity", "seawater density"]
+    },
+    {
+      "id": "SHARQAWY_2010",
+      "title": "Thermophysical properties of seawater: a review of existing correlations and data",
+      "authors": "Sharqawy, M. H., Lienhard V, J. H., Zubair, S. M.",
+      "year": 2010,
+      "url": "https://web.mit.edu/lienhard/www/papers/journal/Thermophysical_properties_of_seawater-DWT-16-354-2010.pdf",
+      "used_for": ["seawater dynamic viscosity, Eqs. 22-23"]
+    },
+    {
+      "id": "ITTC_2024",
+      "title": "Fresh Water and Seawater Properties, 7.5-02-01-03, Revision 03",
+      "publisher": "International Towing Tank Conference",
+      "year": 2024,
+      "url": "https://ittc.info/media/11764/75-02-01-03.pdf",
+      "used_for": ["independent validation target for future reference-table tests"],
+      "status": "reference identified; numerical tables not yet transcribed into this repository"
+    }
+  ]
+}
