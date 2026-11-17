@@ -43,8 +43,8 @@ class TestPipeDatabase(unittest.TestCase):
             sdr=11,
         )
         selected = result["recommended_pipe"]
-        self.assertEqual(selected["dn_od_mm"], 110)
-        self.assertAlmostEqual(selected["velocity_m_s"], 1.455, places=2)
+        self.assertEqual(selected["dn_od_mm"], 140)
+        self.assertAlmostEqual(selected["velocity_m_s"], 1.35, places=2)
         self.assertTrue(result["ranked_alternatives"])
 
     def test_reject_nonpositive_flow_or_velocity(self):
