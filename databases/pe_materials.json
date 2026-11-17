@@ -1,0 +1,11 @@
+{
+  "database_version": "1.0.0",
+  "scope": "Reference classification data for PE pressure-pipe compounds. Not a manufacturer approval list or a complete pressure-rating table.",
+  "default_water_design_coefficient": 1.25,
+  "materials": [
+    {"material_grade":"PE80","material_family":"PE","mrs_MPa":8.0,"design_coefficient_min_water":1.25,"reference_design_stress_MPa":6.3,"slow_crack_growth_class":"standard_PE","material_note":"MRS classification at 20 C and 50 years. Reference design stress follows the ISO 4427 material table; confirm applicable edition and compound certificate.","source_ids":["ISO_4427_1_2007","PE100PLUS_MATERIAL_GUIDANCE"],"status":"reference_classification"},
+    {"material_grade":"PE100","material_family":"PE","mrs_MPa":10.0,"design_coefficient_min_water":1.25,"reference_design_stress_MPa":8.0,"slow_crack_growth_class":"standard_PE","material_note":"MRS classification at 20 C and 50 years. Reference design stress for water applications at the minimum design coefficient.","source_ids":["ISO_4427_1_2007","PE100PLUS_MATERIAL_GUIDANCE"],"status":"reference_classification"},
+    {"material_grade":"PE100-RC","material_family":"PE","mrs_MPa":10.0,"design_coefficient_min_water":1.25,"reference_design_stress_MPa":8.0,"slow_crack_growth_class":"enhanced_resistance","material_note":"PE100-RC retains PE100 MRS classification; RC denotes enhanced resistance to slow crack growth. Do not infer a higher MRS or pressure rating from the RC suffix.","source_ids":["PE100PLUS_MATERIAL_GUIDANCE","AGRU_PE100_RC_HANDBOOK"],"status":"reference_classification"}
+  ],
+  "not_included":["Temperature-dependent pressure derating curves","Manufacturer-specific compound approvals and certificates","Chemical compatibility and environmental stress-cracking assessment","Surge, fatigue, installation and application-specific design coefficients","Product-specific PN/MOP ratings and dimensional tolerances"]
+}
