@@ -68,6 +68,16 @@ print(pipe["nominal_internal_diameter_mm"])    # 90.0 mm
 
 The internal diameter above is nominal geometry (OD - 2 × nominal wall thickness), not a guaranteed minimum flow bore. Actual bore depends on dimensional tolerances and product data.
 
+### PE material reference database — initial release
+
+- Reference records for PE80, PE100 and PE100-RC.
+- MRS classification, minimum water design-coefficient reference and reference design stress.
+- Lookup and material-level design-stress calculation API.
+- PE100-RC is recorded with the same MRS as PE100 and enhanced slow-crack-growth resistance; no pressure-rating uplift is assumed.
+- Temperature derating, manufacturer-specific approvals and pressure ratings are intentionally not yet implemented.
+
+See [PE_MATERIAL_DATABASE_METHOD.md](PE_MATERIAL_DATABASE_METHOD.md).
+
 ## Important engineering limitations
 
 1. The seawater path is intended for natural seawater compatible with PSS-78. Do not use it for industrial brines, produced water or concentrated RO reject without a validated chemistry-specific model.
@@ -77,7 +87,7 @@ The internal diameter above is nominal geometry (OD - 2 × nominal wall thicknes
 5. Seawater vapor pressure is not estimated in this release.
 6. The pipe database currently contains PE100 SDR11 only, OD 32–630 mm. It does not yet contain OD tolerances, wall-thickness tolerance limits, ovality, manufacturer availability or additional SDR series.
 7. The pipe dimensional source refers to ISO 4427-2:2007. Verify against the current controlled standard and the actual supplier before formal design/procurement.
-8. No PE pressure rating is calculated. Pressure design requires material grade, SDR, design coefficient, temperature derating and applicable standards.
+8. No complete PE pipe pressure rating is calculated. The material module only returns MRS/C at the 20 °C, 50-year reference basis. Pressure design additionally requires verified dimensions, temperature/lifetime derating, applicable standards, transient loads and manufacturer data.
 
 ## Tests
 
@@ -91,24 +101,27 @@ python -m unittest discover -s tests -v
 core/
   water_properties.py
   pipe_database.py
+  pe_material_database.py
 data/
   DATA_README.md
 databases/
   water_properties.json
   pipe_standards.json
+  pe_materials.json
 sources/
   source_register.json
 tests/
   test_water_properties.py
   test_pipe_database.py
+  test_pe_material_database.py
 WATER_PROPERTIES_METHOD.md
-PIPE_DATABASE_METHOD.md
+PIPE_DATABASE_METHOD.md and PE_MATERIAL_DATABASE_METHOD.md
 ```
 
 ## Roadmap
 
 1. ~~Initial pipe-standard database~~ — limited PE100 SDR11 subset implemented; extend with verified SDR series, tolerances and product sources.
-2. PE material database (MRS, design coefficient and pressure-design references).
+2. ~~PE material reference database~~ — initial PE80/PE100/PE100-RC classification subset implemented; add verified temperature derating and manufacturer data.
 3. Hydraulic core (velocity, Reynolds number, friction factor and Darcy-Weisbach loss).
 4. Standard-size screening and hydraulic diameter selection.
 5. Economic optimization using total cost of ownership (pipe, installation and pumping energy).
