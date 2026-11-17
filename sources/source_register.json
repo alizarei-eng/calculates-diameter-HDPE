@@ -38,6 +38,15 @@
       "url": "https://ittc.info/media/11764/75-02-01-03.pdf",
       "used_for": ["independent validation target for future reference-table tests"],
       "status": "reference identified; numerical tables not yet transcribed into this repository"
+    },
+    {
+      "id": "BSI_KM546725_ISO4427_2007",
+      "title": "BSI Kitemark Licence No. KM 546725 — ISO 4427-2:2007, PE100 pipe dimensions",
+      "publisher": "BSI Assurance UK Limited",
+      "url": "https://tsscgroup.com/wp-content/uploads/2017/09/KM-ISO-4427.pdf",
+      "used_for": ["initial PE100 SDR11 nominal wall-thickness dataset, OD 32–630 mm"],
+      "page": 2,
+      "status": "historical product-licence transcription; verify against current controlled standard and manufacturer datasheet"
     }
   ]
 }
