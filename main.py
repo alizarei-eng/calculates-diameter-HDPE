@@ -16,6 +16,7 @@ from core.pipe_database import (
     get_pipe_geometry,
     list_available_pipes,
 )
+from core.pipe_sizing import recommend_pipe_diameter
 from core.pe_material_database import (
     PEMaterialDatabaseError,
     calculate_design_stress,
@@ -47,6 +48,7 @@ def show_pipe_menu() -> None:
     print("\n--- Pipe dimensional database ---")
     print("1. List available pipes")
     print("2. Look up one pipe and calculate nominal ID")
+    print("3. Recommend a pipe diameter from flow and target velocity")
     choice = input("Select: ").strip()
 
     try:
@@ -64,6 +66,20 @@ def show_pipe_menu() -> None:
             od = read_float("Nominal outside diameter (mm)")
             sdr = read_float("SDR")
             print_json(get_pipe_geometry(od, sdr, grade))
+        elif choice == "3":
+            flow = read_float("Required flow rate (m3/h)")
+            target_velocity = read_float("Target flow velocity (m/s)")
+            grade = input("Material grade [PE100]: ").strip() or "PE100"
+            sdr_text = input("SDR [11]: ").strip()
+            sdr = float(sdr_text) if sdr_text else 11.0
+            result = recommend_pipe_diameter(
+                flow_rate_m3_h=flow,
+                target_velocity_m_s=target_velocity,
+                material_grade=grade,
+                sdr=sdr,
+            )
+            print("\nRecommended catalogue size and alternatives:")
+            print_json(result)
         else:
             print("Unknown selection.")
     except (PipeDatabaseError, ValueError) as exc:
