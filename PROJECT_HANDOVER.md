@@ -2,7 +2,7 @@
 
 ## Project objective
 
-Develop a traceable Python engineering library that selects and compares standard PE/HDPE pipe sizes using fluid properties, hydraulic constraints and life-cycle cost.
+Develop a traceable Python engineering library for PE/HDPE pipe dimensional lookup, verified reference data and basic standard-size screening. Hydraulic optimization and other advanced design capabilities are reserved for future versions.
 
 ## Engineering decisions
 
@@ -37,19 +37,23 @@ Develop a traceable Python engineering library that selects and compares standar
 - OD tolerances, wall-thickness minimum/maximum tolerances, ovality and manufacturer-specific availability are not included.
 - Verify against the current controlled ISO 4427-2 edition and actual manufacturer documentation before procurement or formal engineering design.
 
-### Not yet implemented
+### Deferred to future versions
 
 - Expanded pipe dimensions for other SDR series and full tolerances.
 - Complete PE material pressure-design database, including verified temperature derating and manufacturer-specific approvals.
 - Hydraulic module (velocity, Reynolds, friction factor, Darcy-Weisbach headloss).
-- Standard-size screening/diameter optimization.
+- Hydraulic diameter optimization and hydraulic constraint screening.
+- Pressure design, including temperature derating, service-life factors, pressure rating and transient/surge assessment.
 - Pump energy and total-cost-of-ownership optimization.
+- Sensitivity analysis and scenario studies.
 - GUI and engineering report generator.
 - ITTC numerical reference CSV datasets and regression tests against those tables.
 
-## Next recommended task
+## Current-version direction
 
-Extend the initial PE material database with verified temperature derating curves and manufacturer-specific compound approvals. Then implement the hydraulic core. Keep pressure-design calculations separate from hydraulic roughness and diameter calculations.
+Keep this version focused on pipe-standard data, PE material reference data, exact lookup and basic dimensional screening. Do not add the hydraulic core, pressure-design calculations, economic optimization, sensitivity/scenario analysis or GUI/reporting in this release.
+
+These capabilities are deferred to future versions. When resumed, develop them as separate, independently tested modules and keep pressure design separate from hydraulic roughness and diameter calculations.
 
 ## Main references
 
