@@ -6,21 +6,31 @@
       "title": "Revised Release on the IAPWS Industrial Formulation 1997 for the Thermodynamic Properties of Water and Steam",
       "publisher": "International Association for the Properties of Water and Steam",
       "url": "https://iapws.org/relguide/IF97-Rev.html",
-      "used_for": ["freshwater density", "freshwater viscosity", "saturation pressure"]
+      "used_for": [
+        "freshwater density",
+        "freshwater viscosity",
+        "saturation pressure"
+      ]
     },
     {
       "id": "IAPWS_VISC",
       "title": "Release on the IAPWS Formulation 2008 for the Viscosity of Ordinary Water Substance",
       "publisher": "International Association for the Properties of Water and Steam",
       "url": "https://iapws.org/relguide/visc.pdf",
-      "used_for": ["freshwater viscosity reference"]
+      "used_for": [
+        "freshwater viscosity reference"
+      ]
     },
     {
       "id": "GSW_PYTHON",
       "title": "GSW-Python documentation",
       "publisher": "TEOS-10",
       "url": "https://teos-10.github.io/GSW-Python/",
-      "used_for": ["PSS-78 practical salinity", "TEOS-10 Absolute Salinity", "seawater density"]
+      "used_for": [
+        "PSS-78 practical salinity",
+        "TEOS-10 Absolute Salinity",
+        "seawater density"
+      ]
     },
     {
       "id": "SHARQAWY_2010",
@@ -28,7 +38,9 @@
       "authors": "Sharqawy, M. H., Lienhard V, J. H., Zubair, S. M.",
       "year": 2010,
       "url": "https://web.mit.edu/lienhard/www/papers/journal/Thermophysical_properties_of_seawater-DWT-16-354-2010.pdf",
-      "used_for": ["seawater dynamic viscosity, Eqs. 22-23"]
+      "used_for": [
+        "seawater dynamic viscosity, Eqs. 22-23"
+      ]
     },
     {
       "id": "ITTC_2024",
@@ -36,7 +48,9 @@
       "publisher": "International Towing Tank Conference",
       "year": 2024,
       "url": "https://ittc.info/media/11764/75-02-01-03.pdf",
-      "used_for": ["independent validation target for future reference-table tests"],
+      "used_for": [
+        "independent validation target for future reference-table tests"
+      ],
       "status": "reference identified; numerical tables not yet transcribed into this repository"
     },
     {
@@ -44,9 +58,51 @@
       "title": "BSI Kitemark Licence No. KM 546725 — ISO 4427-2:2007, PE100 pipe dimensions",
       "publisher": "BSI Assurance UK Limited",
       "url": "https://tsscgroup.com/wp-content/uploads/2017/09/KM-ISO-4427.pdf",
-      "used_for": ["initial PE100 SDR11 nominal wall-thickness dataset, OD 32–630 mm"],
+      "used_for": [
+        "initial PE100 SDR11 nominal wall-thickness dataset, OD 32–630 mm"
+      ],
       "page": 2,
       "status": "historical product-licence transcription; verify against current controlled standard and manufacturer datasheet"
+    },
+    {
+      "id": "ISO_4427_1_2007",
+      "title": "ISO 4427-1:2007 — Polyethylene (PE) pipes and fittings for water supply — Part 1: General",
+      "publisher": "International Organization for Standardization",
+      "url": "https://studylib.net/doc/27075244/iso-4427-1-2007-hdpe",
+      "used_for": [
+        "PE80 and PE100 MRS classification",
+        "reference design stress values at 20 C"
+      ]
+    },
+    {
+      "id": "PE100PLUS_MATERIAL_GUIDANCE",
+      "title": "What is the meaning of the designations PE80, PE100 & PE100-RC?",
+      "publisher": "PE100+ Association",
+      "url": "https://www.pe100plus.com/PE-Pipes/Technical-guidance/model/Materials/mrs/What-is-the-meaning-of-the-designations-PE80-PE100-PE100-RC-i254.html",
+      "used_for": [
+        "MRS classification for PE80, PE100 and PE100-RC",
+        "PE100-RC slow crack growth interpretation"
+      ]
+    },
+    {
+      "id": "PE100PLUS_PRESSURE_GUIDANCE",
+      "title": "PE pipe design",
+      "publisher": "PE100+ Association",
+      "url": "https://www.pe100plus.com/PE-Pipes/Technical-guidance/model/Design/PE-pressure-pipe/PE-pipe-design-i244.html",
+      "used_for": [
+        "minimum design coefficient guidance for water",
+        "relationship between MRS, SDR and MOP"
+      ]
+    },
+    {
+      "id": "AGRU_PE100_RC_HANDBOOK",
+      "title": "Technical handbook PE100 / PE100-RC",
+      "publisher": "AGRU",
+      "url": "https://cdn.myvink.be/0a/d1/7971/ps_doc_technical_handbook_pe100_rc_agru_agruline_2015_en_de.pdf",
+      "used_for": [
+        "PE100-RC material-property comparison",
+        "PE100-RC MRS classification"
+      ]
     }
   ]
 }
