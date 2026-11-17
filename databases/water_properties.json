@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Method registry for water-property calculations. Numerical reference tables are intentionally not embedded until transcribed and independently checked against the cited source documents.",
+  "freshwater": {
+    "density": {
+      "method": "IAPWS-IF97",
+      "implementation": "iapws.IAPWS97",
+      "unit": "kg/m3"
+    },
+    "dynamic_viscosity": {
+      "method": "IAPWS-IF97",
+      "implementation": "iapws.IAPWS97",
+      "unit": "Pa.s"
+    },
+    "vapor_pressure": {
+      "method": "IAPWS-IF97 saturated-liquid state",
+      "implementation": "IAPWS97(T=temperature_K, x=0)",
+      "unit": "MPa"
+    }
+  },
+  "seawater": {
+    "practical_salinity": {
+      "method": "PSS-78",
+      "implementation": "gsw.SP_from_C",
+      "conductivity_unit_internal": "mS/cm",
+      "temperature_unit": "degree_Celsius",
+      "pressure_unit": "dbar sea pressure"
+    },
+    "absolute_salinity": {
+      "method": "TEOS-10",
+      "implementation": "gsw.SA_from_SP",
+      "unit": "g/kg",
+      "coordinates": "recommended"
+    },
+    "density": {
+      "method": "TEOS-10",
+      "implementation": "gsw.CT_from_t followed by gsw.rho",
+      "unit": "kg/m3"
+    },
+    "dynamic_viscosity": {
+      "method": "Sharqawy et al. (2010), Eqs. 22-23",
+      "unit": "Pa.s",
+      "valid_temperature_C": [0, 180],
+      "valid_salinity_mass_fraction": [0, 0.15]
+    }
+  },
+  "inland_brine": {
+    "status": "not_implemented",
+    "reason": "EC alone does not uniquely define composition, salinity, density or viscosity.",
+    "required_inputs": "Full ionic analysis or a validated site-specific calibration model."
+  }
+}
