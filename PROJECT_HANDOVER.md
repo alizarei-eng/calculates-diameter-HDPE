@@ -25,6 +25,8 @@ Develop a traceable Python engineering library that selects and compares standar
 - Explicit unsupported status for generic inland-brine inference from EC alone.
 - Initial pipe dimensional database: 22 PE100 SDR11 records, nominal OD 32–630 mm.
 - Pipe database API for loading, filtering, exact lookup and nominal ID calculation.
+- Initial PE material reference database for PE80, PE100 and PE100-RC, with MRS/design coefficient fields and a material-level MRS/C helper.
+- PE100-RC is not assigned an MRS or pressure-rating uplift over PE100.
 - Unit tests and method/source documentation for both implemented modules.
 
 ### Pipe database limitations
@@ -38,7 +40,7 @@ Develop a traceable Python engineering library that selects and compares standar
 ### Not yet implemented
 
 - Expanded pipe dimensions for other SDR series and full tolerances.
-- PE material pressure-design database (MRS, design coefficient and temperature derating).
+- Complete PE material pressure-design database, including verified temperature derating and manufacturer-specific approvals.
 - Hydraulic module (velocity, Reynolds, friction factor, Darcy-Weisbach headloss).
 - Standard-size screening/diameter optimization.
 - Pump energy and total-cost-of-ownership optimization.
@@ -47,7 +49,7 @@ Develop a traceable Python engineering library that selects and compares standar
 
 ## Next recommended task
 
-Implement the PE material database, including MRS, design coefficient, grade applicability, temperature derating references and traceable sources. Keep pressure-design calculations separate from hydraulic roughness and diameter calculations.
+Extend the initial PE material database with verified temperature derating curves and manufacturer-specific compound approvals. Then implement the hydraulic core. Keep pressure-design calculations separate from hydraulic roughness and diameter calculations.
 
 ## Main references
 
@@ -57,5 +59,8 @@ Implement the PE material database, including MRS, design coefficient, grade app
 - GSW-Python / TEOS-10: https://teos-10.github.io/GSW-Python/
 - Sharqawy et al. (2010): https://web.mit.edu/lienhard/www/papers/journal/Thermophysical_properties_of_seawater-DWT-16-354-2010.pdf
 - ITTC 2024: https://ittc.info/media/11764/75-02-01-03.pdf
+- ISO 4427-1:2007 material classification table (PE80 / PE100 MRS and design stress): https://studylib.net/doc/27075244/iso-4427-1-2007-hdpe
+- PE100+ material designation guidance: https://www.pe100plus.com/PE-Pipes/Technical-guidance/model/Materials/mrs/What-is-the-meaning-of-the-designations-PE80-PE100-PE100-RC-i254.html
+- AGRU PE100 / PE100-RC handbook: https://cdn.myvink.be/0a/d1/7971/ps_doc_technical_handbook_pe100_rc_agru_agruline_2015_en_de.pdf
 - PE100+ technical guidance: https://www.pe100plus.com/PE-Pipes/Technical-guidance/model/Design/PE-pressure-pipe/PE-pipe-design-i244.html
 - PPI Handbook of PE Pipe: https://plasticpipe.org/
