@@ -89,6 +89,20 @@ See [PE_MATERIAL_DATABASE_METHOD.md](PE_MATERIAL_DATABASE_METHOD.md).
 7. The pipe dimensional source refers to ISO 4427-2:2007. Verify against the current controlled standard and the actual supplier before formal design/procurement.
 8. No complete PE pipe pressure rating is calculated. The material module only returns MRS/C at the 20 °C, 50-year reference basis. Pressure design additionally requires verified dimensions, temperature/lifetime derating, applicable standards, transient loads and manufacturer data.
 
+## Interactive program
+
+Run the command-line interface from the repository root:
+
+```bash
+python main.py
+```
+
+The menu provides access to the pipe dimensional database, PE material reference database and water-property library. It is an interface to the existing modules; engineering logic remains in `core/`.
+
+## Persian step-by-step tutorials
+
+Start with [the tutorial index](docs/tutorial/README.md). The lessons cover project architecture, running the program, pipe dimensions, PE materials and water properties.
+
 ## Tests
 
 ```bash
