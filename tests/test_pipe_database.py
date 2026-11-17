@@ -1,5 +1,7 @@
 import unittest
 
+from core.pipe_sizing import recommend_pipe_diameter
+
 from core.pipe_database import (
     PipeDatabaseError,
     calculate_internal_diameter,
@@ -32,6 +34,24 @@ class TestPipeDatabase(unittest.TestCase):
     def test_invalid_geometry(self):
         with self.assertRaises(PipeDatabaseError):
             calculate_internal_diameter(100, 50)
+
+    def test_recommend_pipe_from_flow_and_target_velocity(self):
+        result = recommend_pipe_diameter(
+            flow_rate_m3_h=50,
+            target_velocity_m_s=1.5,
+            material_grade="PE100",
+            sdr=11,
+        )
+        selected = result["recommended_pipe"]
+        self.assertEqual(selected["dn_od_mm"], 110)
+        self.assertAlmostEqual(selected["velocity_m_s"], 1.455, places=2)
+        self.assertTrue(result["ranked_alternatives"])
+
+    def test_reject_nonpositive_flow_or_velocity(self):
+        with self.assertRaises(PipeDatabaseError):
+            recommend_pipe_diameter(flow_rate_m3_h=0, target_velocity_m_s=1.5)
+        with self.assertRaises(PipeDatabaseError):
+            recommend_pipe_diameter(flow_rate_m3_h=50, target_velocity_m_s=0)
 
     def test_filter_by_grade_and_sdr(self):
         records = list_available_pipes(material_grade="PE100", sdr=11)
