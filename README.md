@@ -1,6 +1,6 @@
 # HDPE Pipe Diameter Engineering Library
 
-A modular Python engineering library for PE/HDPE pipe dimensional lookup, water-property calculations, hydraulic sizing and optimization.
+A modular Python engineering library for PE/HDPE pipe dimensional lookup, water-property calculations and PE material reference data.
 
 ## Implemented scope
 
@@ -118,13 +118,20 @@ WATER_PROPERTIES_METHOD.md
 PIPE_DATABASE_METHOD.md and PE_MATERIAL_DATABASE_METHOD.md
 ```
 
-## Roadmap
+## Current-version scope and roadmap
 
-1. ~~Initial pipe-standard database~~ — limited PE100 SDR11 subset implemented; extend with verified SDR series, tolerances and product sources.
-2. ~~PE material reference database~~ — initial PE80/PE100/PE100-RC classification subset implemented; add verified temperature derating and manufacturer data.
-3. Hydraulic core (velocity, Reynolds number, friction factor and Darcy-Weisbach loss).
-4. Standard-size screening and hydraulic diameter selection.
-5. Economic optimization using total cost of ownership (pipe, installation and pumping energy).
-6. Engineering report and graphical interface.
+This release focuses on reliable reference data and dimensional lookup:
+
+1. ~~Initial pipe-standard database~~ — limited PE100 SDR11 subset implemented. Expansion with verified SDR series, tolerances and product sources is separate follow-up work.
+2. ~~PE material reference database~~ — initial PE80/PE100/PE100-RC classification subset implemented.
+3. Standard pipe lookup and basic dimensional screening using the documented database. This does not perform hydraulic diameter optimization or pressure-rating verification.
+
+The following capabilities are intentionally deferred to future versions and are not part of the current release:
+
+- Hydraulic calculations: velocity, Reynolds number, friction factor and Darcy-Weisbach headloss.
+- Pressure design: temperature derating, service-life factors, pressure rating and transient/surge assessment.
+- Economic optimization and total cost of ownership.
+- Sensitivity analysis and scenario studies.
+- Graphical interface and automated engineering reports.
 
 See [WATER_PROPERTIES_METHOD.md](WATER_PROPERTIES_METHOD.md) and [PIPE_DATABASE_METHOD.md](PIPE_DATABASE_METHOD.md) for methods, assumptions and references.
