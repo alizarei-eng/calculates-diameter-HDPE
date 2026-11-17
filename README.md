@@ -1,5 +1,13 @@
 # HDPE Pipe Diameter Engineering Library
 
+## Focused diameter selector
+
+The interactive flow-rate and target-velocity pipe selection tool has been separated into its own repository:
+[HDPE Pipe Diameter Selector](https://github.com/alizarei-eng/hdpe-pipe-diameter-selector).
+
+This repository remains the broader engineering reference library (pipe dimensions, PE material data, water properties, source records and related tests).
+
+
 A modular Python engineering library for PE/HDPE pipe dimensional lookup, water-property calculations and PE material reference data.
 
 ## Implemented scope
